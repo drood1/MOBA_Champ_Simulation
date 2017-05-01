@@ -27,3 +27,5 @@ C:\Users\Karl Olsen\Desktop\LoL_Champ_Unity\LoL Champion Template\Temp\bin\Debug
 C:\Users\Karl Olsen\Desktop\LoL_Champ_Unity\LoL Champion Template\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\Karl Olsen\Desktop\LoL_Champ_Unity\LoL Champion Template\obj\Debug\Assembly-CSharp.dll
 C:\Users\Karl Olsen\Desktop\LoL_Champ_Unity\LoL Champion Template\obj\Debug\Assembly-CSharp.pdb
+C:\Users\Karl Olsen\Desktop\MOBA_Champ_Simulation\MOBA Champion Template\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+C:\Users\Karl Olsen\Desktop\MOBA_Champ_Simulation\MOBA Champion Template\obj\Debug\Assembly-CSharp.dll
