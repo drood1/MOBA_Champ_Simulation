@@ -6,7 +6,7 @@ public class Player_Abilities : MonoBehaviour {
 	public GameObject Q_object;
 	public GameObject W_object;
 	public GameObject R_object;
-	Debuff_Manager debuffs;
+	//Debuff_Manager debuffs;
 
 	public Player_Stats stat_script;
 
@@ -45,7 +45,7 @@ public class Player_Abilities : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//target_mouse = Resources.Load ("ret");
-		debuffs = this.gameObject.GetComponent<Debuff_Manager> ();
+		//debuffs = this.gameObject.GetComponent<Debuff_Manager> ();
 		stat_script = this.gameObject.GetComponent<Player_Stats> ();
 	}
 
@@ -106,7 +106,7 @@ public class Player_Abilities : MonoBehaviour {
 				Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 				if (Physics.Raycast(ray, out hit))
 				{
-					if (hit.collider.gameObject.tag == "Player" || hit.collider.gameObject.tag == "Allied_Champ" )
+					if (hit.collider.gameObject.tag == "Blue_Champ")
 					{
 						Debug.Log ("PUTTING SHIELD ON " + hit.collider.gameObject.name);
 						//********************APPLY THE SHIELD BUFF HERE***************************************
@@ -143,7 +143,7 @@ public class Player_Abilities : MonoBehaviour {
 				Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 				if (Physics.Raycast(ray, out hit))
 				{
-					if (hit.collider.gameObject.tag == "Enemy")
+					if (hit.collider.gameObject.tag == "Red_Champ" || hit.collider.gameObject.tag == "Red_Minion")
 					{
 						//in this case, Malefic Visions' ID # is 0
 						hit.collider.gameObject.GetComponent<Debuff_Manager>().ApplyDebuffToSelf(0, this.gameObject);

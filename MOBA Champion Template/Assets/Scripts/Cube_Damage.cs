@@ -17,7 +17,7 @@ public class Cube_Damage : MonoBehaviour {
 
 
 	void OnTriggerEnter(Collider col)	{
-		if (col.gameObject.tag == "Enemy") {
+		if (col.gameObject.tag == "Red_Champ" || col.gameObject.tag == "Red_Minion") {
 			enemy_stats = col.gameObject.GetComponent<Enemy_Stats> ();
 
 			//deal damage to the enemy

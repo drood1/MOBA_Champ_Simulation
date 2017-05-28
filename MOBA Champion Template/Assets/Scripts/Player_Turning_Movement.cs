@@ -7,10 +7,9 @@ public class Player_Turning_Movement : MonoBehaviour {
 
     public float RotateSpeed = 1;
 
-    Rigidbody this_rb;
     // Use this for initialization
     void Start () {
-        this_rb = this.gameObject.GetComponent<Rigidbody>();
+		
 	}
 		
 

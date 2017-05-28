@@ -42,14 +42,18 @@ public class Player_Stats : MonoBehaviour {
 		*/
 
 		if (shields > 0) {
-			if (final_amount < shields)
+			if (final_amount < shields) {
 				shields -= final_amount;
+				Debug.Log ("Player took " + final_amount + " damage! Remaining shields: " + shields);
+			}
 			else {
 				health -= (final_amount - shields);
 				shields = 0;
 				Destroy(transform.Find("Player/Shield"));
 			}
 		}
+		else
+			Debug.Log ("Player took " + final_amount + " damage!");
 
 		health -= final_amount;
 		if (health <= 0) {

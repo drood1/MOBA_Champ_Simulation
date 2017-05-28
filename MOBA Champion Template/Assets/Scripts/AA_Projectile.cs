@@ -5,12 +5,16 @@ using UnityEngine;
 public class AA_Projectile : MonoBehaviour {
 	public GameObject target;
 	public float damage = 0;
-	public float speed = 1;
+	public float speed = 0.1f;
 
 
 	void OnTriggerEnter(Collider col)	{
-		if (col.gameObject.tag == "Enemy")	{
+		if (col.gameObject.tag == "Red_Champ")	{
 			col.gameObject.GetComponent<Enemy_Stats> ().TakeDamage (damage);
+			Destroy (this.gameObject);
+		}
+		else if(col.gameObject.tag == "Red_Turret")	{
+			col.gameObject.GetComponent<Turret_AI> ().TakeDamage (damage);
 			Destroy (this.gameObject);
 		}
 	}

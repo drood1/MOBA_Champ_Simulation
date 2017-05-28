@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy_Stats : MonoBehaviour {
 
-	Debuff_Manager debuffs;
+	//Debuff_Manager debuffs;
 
 	public float health = 100;
 
@@ -21,7 +21,7 @@ public class Enemy_Stats : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		debuffs = this.gameObject.GetComponent<Debuff_Manager> ();
+		//debuffs = this.gameObject.GetComponent<Debuff_Manager> ();
 	}
 	
 	// Update is called once per frame

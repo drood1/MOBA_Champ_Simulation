@@ -41,7 +41,7 @@ public class Auto_Attack2 : MonoBehaviour {
 			if (AA_on_CD == false) {
 				GameObject temp = Instantiate (projectile, this.transform.position, Quaternion.identity);
 				temp.GetComponent<AA_Projectile> ().Create (target, damage);
-				Debug.Log ("Attack at: " + Time.time);
+				//Debug.Log ("Attack at: " + Time.time);
 				time_of_attack = Time.time;
 				next_AA_time = time_of_attack + (1 / attack_speed);
 				AA_on_CD = true;
@@ -50,7 +50,7 @@ public class Auto_Attack2 : MonoBehaviour {
 	}
 
 	void PathToTarget(GameObject t)	{
-		Debug.Log ("PATHING");
+		//Debug.Log ("PATHING");
 		dir = this.gameObject.transform.position - t.transform.position;
 
 		//have the player facing towards the target
@@ -70,15 +70,15 @@ public class Auto_Attack2 : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Input.GetMouseButtonDown(1))
+		if (Input.GetMouseButton(1))
 		{
 			RaycastHit hit;
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			if (Physics.Raycast(ray, out hit))
 			{
-				if (hit.collider.gameObject.tag == "Enemy") {
+				if (hit.collider.gameObject.tag.Contains("Red")) {
 					Instantiate (click_indicator, hit.collider.transform.position, Quaternion.identity);
-					Debug.Log ("TARGET IS " + hit.collider.gameObject.name);
+					//Debug.Log ("TARGET IS " + hit.collider.gameObject.name);
 					target = hit.collider.gameObject;
 					shooting = true;
 				}

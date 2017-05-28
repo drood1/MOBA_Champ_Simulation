@@ -29,7 +29,6 @@ public class Mystic_Shot : MonoBehaviour {
 
 		dir.Normalize ();
 
-		Debug.Log ("DIR NORMALIZED: " + dir.x + ", " + dir.z);
 		end_pos = this.transform.position + (dir * distance);
 
 		float theta = Mathf.Atan (dir.z/dir.x) * Mathf.Rad2Deg * -1;
@@ -42,7 +41,7 @@ public class Mystic_Shot : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider col)	{
-		if (col.gameObject.tag == "Enemy") {
+		if (col.gameObject.tag == "Red_Minion" || col.gameObject.tag == "Red_Champ") {
 			col.gameObject.GetComponent<Enemy_Stats> ().TakeDamage (base_damage);
 			Destroy (this.gameObject);
 		}
@@ -58,7 +57,6 @@ public class Mystic_Shot : MonoBehaviour {
 		dist_to_end = Vector3.Distance (this.transform.position, end_pos);
 
 		if (dist_to_end < 0.05f) {
-			//Debug.Log ("MYSTIC SHOT REACHED END");
 			Destroy (this.gameObject);
 		}
 
