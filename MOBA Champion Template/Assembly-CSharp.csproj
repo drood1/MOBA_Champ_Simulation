@@ -50,11 +50,14 @@
      <Compile Include="Assets\Scripts\Auto_Attack.cs" />
      <Compile Include="Assets\Scripts\Auto_Attack2.cs" />
      <Compile Include="Assets\Scripts\Auto_Shrink_Expand.cs" />
+     <Compile Include="Assets\Scripts\CameraFacingBillboard.cs" />
      <Compile Include="Assets\Scripts\Cube_Damage.cs" />
      <Compile Include="Assets\Scripts\Debuff_Manager.cs" />
      <Compile Include="Assets\Scripts\DeleteSelf.cs" />
      <Compile Include="Assets\Scripts\Enemy_Bullet.cs" />
      <Compile Include="Assets\Scripts\Enemy_Stats.cs" />
+     <Compile Include="Assets\Scripts\HP_Bar.cs" />
+     <Compile Include="Assets\Scripts\HP_Bar_Pos.cs" />
      <Compile Include="Assets\Scripts\MV_VFX_Pulse.cs" />
      <Compile Include="Assets\Scripts\MaleficVisions.cs" />
      <Compile Include="Assets\Scripts\Mystic_Shot.cs" />

@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player_Stats : MonoBehaviour {
+	public float max_health = 100;
 	public float health = 100;
 	public float shields = 0;
 
@@ -18,10 +20,12 @@ public class Player_Stats : MonoBehaviour {
 
 	public float CDR = 0;
 
+	public Image hp_bar;
+
 
 	// Use this for initialization
 	void Start () {
-		
+		hp_bar = transform.Find ("Player_Canvas/Player_HP_Bar").GetComponent<Image> ();
 	}
 
 	//should add an "index" argument (0 = physical, 1 = magic, 2 = true) in the future
@@ -56,8 +60,11 @@ public class Player_Stats : MonoBehaviour {
 			Debug.Log ("Player took " + final_amount + " damage!");
 
 		health -= final_amount;
+		hp_bar.fillAmount = health/max_health;
+
 		if (health <= 0) {
 			Debug.Log ("PLAYER DIED");
+			Destroy(GameObject.Find("Player_Health_Bar"));
 			Destroy (this.gameObject);
 		}
 

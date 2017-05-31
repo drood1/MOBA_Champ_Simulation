@@ -2,11 +2,11 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Turret_AI.cs">
     <Files>
-      <File FileName="Assets\Scripts\Right_Click_Movement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Turret_AI.cs" Line="20" Column="2" />
-      <File FileName="Assets\Scripts\Enemy_Stats.cs" Line="16" Column="69" />
-      <File FileName="Assets\Scripts\AA_Projectile.cs" Line="13" Column="68" />
-      <File FileName="Assets\Scripts\Auto_Attack2.cs" Line="53" Column="5" />
+      <File FileName="Assets\Scripts\Player_Stats.cs" Line="22" Column="1" />
+      <File FileName="Assets\Scripts\HP_Bar_Pos.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\HP_Bar.cs" Line="20" Column="61" />
+      <File FileName="Assets\Scripts\Turret_AI.cs" Line="55" Column="21" />
+      <File FileName="Assets\Scripts\CameraFacingBillboard.cs" Line="13" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
