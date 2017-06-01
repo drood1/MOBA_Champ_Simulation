@@ -10,6 +10,9 @@ public class Player_Stats : MonoBehaviour {
 	public float health;
 	public float shields = 0;
 
+	public float max_mana = 100;
+	public float mana;
+
 	public float AD = 75;
 
 	public float AP = 100;
@@ -23,13 +26,19 @@ public class Player_Stats : MonoBehaviour {
 	public float CDR = 0;
 
 	public Image hp_bar;
-
+	public Image mana_bar;
 
 	// Use this for initialization
 	void Start () {
 		hp_bar = transform.Find ("Player_Canvas/Player_HP_Bar").GetComponent<Image> ();
+		mana_bar = transform.Find ("Player_Canvas/Player_Mana_Bar").GetComponent<Image> ();
 		abilities = this.gameObject.GetComponent<Player_Abilities> ();
 		health = max_health;
+		mana = max_mana;
+	}
+
+	public void UpdateManaBar()	{
+		mana_bar.fillAmount = mana/max_mana;
 	}
 
 	//should add an "index" argument (0 = physical, 1 = magic, 2 = true) in the future
@@ -63,8 +72,7 @@ public class Player_Stats : MonoBehaviour {
 			health -= final_amount;
 			Debug.Log ("Player took " + final_amount + " damage!");
 		}
-
-
+			
 		hp_bar.fillAmount = health/max_health;
 
 		if (health <= 0) {
