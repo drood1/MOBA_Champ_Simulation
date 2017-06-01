@@ -67,8 +67,7 @@ public class Turret_AI : MonoBehaviour {
 			CancelInvoke ();
 			shooting = false;
 		}
-
-		if (Vector3.Distance (player.transform.position, this.transform.position) <= range && shooting == false) {
+		else if (Vector3.Distance (player.transform.position, this.transform.position) <= range && shooting == false) {
 			Debug.Log ("PLAYER ENTERED RANGE");
 			target = player;
 			Fire ();

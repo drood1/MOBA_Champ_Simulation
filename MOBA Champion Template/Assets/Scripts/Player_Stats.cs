@@ -4,8 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Player_Stats : MonoBehaviour {
+	public Player_Abilities abilities;
+
 	public float max_health = 100;
-	public float health = 100;
+	public float health;
 	public float shields = 0;
 
 	public float AD = 75;
@@ -26,6 +28,8 @@ public class Player_Stats : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		hp_bar = transform.Find ("Player_Canvas/Player_HP_Bar").GetComponent<Image> ();
+		abilities = this.gameObject.GetComponent<Player_Abilities> ();
+		health = max_health;
 	}
 
 	//should add an "index" argument (0 = physical, 1 = magic, 2 = true) in the future
@@ -49,17 +53,18 @@ public class Player_Stats : MonoBehaviour {
 			if (final_amount < shields) {
 				shields -= final_amount;
 				Debug.Log ("Player took " + final_amount + " damage! Remaining shields: " + shields);
-			}
-			else {
+			} else {
 				health -= (final_amount - shields);
 				shields = 0;
-				Destroy(transform.Find("Player/Shield"));
+				Destroy (transform.Find ("Player/Shield(Clone)"));
 			}
-		}
-		else
+		} 
+		else {
+			health -= final_amount;
 			Debug.Log ("Player took " + final_amount + " damage!");
+		}
 
-		health -= final_amount;
+
 		hp_bar.fillAmount = health/max_health;
 
 		if (health <= 0) {
