@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\Auto_Attack.cs" />
      <Compile Include="Assets\Scripts\Auto_Attack2.cs" />
      <Compile Include="Assets\Scripts\Auto_Shrink_Expand.cs" />
+     <Compile Include="Assets\Scripts\BuffManager.cs" />
      <Compile Include="Assets\Scripts\CameraFacingBillboard.cs" />
      <Compile Include="Assets\Scripts\Cube_Damage.cs" />
      <Compile Include="Assets\Scripts\Debuff_Manager.cs" />

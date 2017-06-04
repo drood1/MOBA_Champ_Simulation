@@ -128,8 +128,6 @@ public class Player_Abilities : MonoBehaviour {
 						//create the shield object
 						GameObject s = Instantiate(W_object, this.gameObject.transform);
 						s.transform.localPosition = Vector3.zero;
-						//add shield values to player health
-						stat_script.shields += 150;
 						//hit.collider.gameObject
 						W_on_CD = true;
 						time_W_cast = Time.time;

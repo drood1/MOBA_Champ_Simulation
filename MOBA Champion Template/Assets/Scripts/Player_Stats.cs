@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class Player_Stats : MonoBehaviour {
 	public Player_Abilities abilities;
+	public Shield current_shield;
 
 	public float max_health = 100;
 	public float health;
-	public float shields = 0;
 
 	public float max_mana = 100;
 	public float mana;
@@ -58,21 +58,23 @@ public class Player_Stats : MonoBehaviour {
 		}
 		*/
 
-		if (shields > 0) {
-			if (final_amount < shields) {
-				shields -= final_amount;
-				Debug.Log ("Player took " + final_amount + " damage! Remaining shields: " + shields);
-			} else {
-				health -= (final_amount - shields);
-				shields = 0;
-				Destroy (transform.Find ("Player/Shield(Clone)"));
+		if (GameObject.Find ("Player/Shield(Clone)") != null) {
+			current_shield = GameObject.Find ("Player/Shield(Clone)").GetComponent<Shield> ();
+			if (current_shield.remaining_shields > final_amount) {
+				current_shield.remaining_shields -= final_amount;
+				Debug.Log ("Took " + final_amount + " damage! Remaining shields: " + current_shield.remaining_shields);
+			} 
+			else {
+				health -= (final_amount - current_shield.remaining_shields);
+				Debug.Log ("Player took " + (final_amount - current_shield.remaining_shields) + " damage!");
+				current_shield.DestroySelf ();
 			}
 		} 
 		else {
 			health -= final_amount;
 			Debug.Log ("Player took " + final_amount + " damage!");
 		}
-			
+
 		hp_bar.fillAmount = health/max_health;
 
 		if (health <= 0) {
