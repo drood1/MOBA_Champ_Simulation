@@ -16,7 +16,6 @@ public class Turret_AI : MonoBehaviour {
 	public float actual_damage;
 	public float multiplier = 1.25f;
 
-	public bool shooting = false;
 
 
 	// Use this for initialization
@@ -39,40 +38,31 @@ public class Turret_AI : MonoBehaviour {
 	}
 
 	void Fire()	{
-		if (Vector3.Distance (this.gameObject.transform.position, target.transform.position) <= range) {
-			//create a turret_bullet object
-			GameObject b = Instantiate(turret_bullet, this.transform.position, Quaternion.identity);
-			b.GetComponent<Enemy_Bullet> ().setInfo (target, actual_damage);
+		if (target != null) {
+			if (Vector3.Distance (this.gameObject.transform.position, target.transform.position) <= range) {
+				//create a turret_bullet object
+				GameObject b = Instantiate (turret_bullet, this.transform.position, Quaternion.identity);
+				b.GetComponent<Enemy_Bullet> ().setInfo (target, actual_damage);
 
-			actual_damage = actual_damage * multiplier;
-			Invoke ("Fire", 2);
-		}
-		else {
-			Debug.Log ("PLAYER EXITED RANGE");
-			actual_damage = base_damage;
-			target = null;
-			CancelInvoke ();
-			shooting = false;
+				actual_damage = actual_damage * multiplier;
+				Invoke ("Fire", 2);
+			}
 		}
 	}
 
-	void setTarget(GameObject t)	{
+	public void setTarget(GameObject t)	{
 		target = t;
+		Fire ();
 	}
-	
+
+	public void cancelFire()	{
+		target = null;
+		CancelInvoke ();
+		actual_damage = base_damage;
+	}
+
 	// Update is called once per frame
 	void Update () {
-		if (GameObject.Find ("Player") == null) {
-			target = null;
-			CancelInvoke ();
-			shooting = false;
-		}
-		else if (Vector3.Distance (player.transform.position, this.transform.position) <= range && shooting == false) {
-			Debug.Log ("PLAYER ENTERED RANGE");
-			target = player;
-			Fire ();
-			shooting = true;
-		}
-
+		
 	}
 }

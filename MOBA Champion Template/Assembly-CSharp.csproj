@@ -72,6 +72,7 @@
      <Compile Include="Assets\Scripts\Shield.cs" />
      <Compile Include="Assets\Scripts\Talon_R_Cubes.cs" />
      <Compile Include="Assets\Scripts\Turret_AI.cs" />
+     <Compile Include="Assets\Scripts\Turret_Detection.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

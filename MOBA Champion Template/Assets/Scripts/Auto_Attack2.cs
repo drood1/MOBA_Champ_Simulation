@@ -78,7 +78,7 @@ public class Auto_Attack2 : MonoBehaviour {
 			{
 				if (hit.collider.gameObject.tag.Contains("Red")) {
 					Instantiate (click_indicator, hit.collider.transform.position, Quaternion.identity);
-					//Debug.Log ("TARGET IS " + hit.collider.gameObject.name);
+					Debug.Log ("TARGET IS " + hit.collider.gameObject.name);
 					target = hit.collider.gameObject;
 					shooting = true;
 				}
