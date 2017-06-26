@@ -22,10 +22,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 811, y: 371}
-  m_MaxSize: {x: 22006, y: 14021}
+  m_MinSize: {x: 815, y: 392}
+  m_MaxSize: {x: 22010, y: 14042}
   vertical: 0
-  controlID: 160
+  controlID: 3657
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -122,10 +122,10 @@ MonoBehaviour:
     y: 0
     width: 322
     height: 947
-  m_MinSize: {x: 232, y: 371}
-  m_MaxSize: {x: 10002, y: 14021}
+  m_MinSize: {x: 232, y: 392}
+  m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 65
+  controlID: 3658
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -188,20 +188,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts
+    - Assets/Resources
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Resources
   m_LastFoldersGridSize: 64
   m_LastProjectPath: C:\Users\Karl Olsen\Desktop\MOBA_Champ_Simulation\MOBA Champion
     Template
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 08260000
-    m_LastClickedID: 9736
-    m_ExpandedIDs: 00000000e224000000ca9a3bffffff7f
+    m_SelectedIDs: ec250000
+    m_LastClickedID: 9708
+    m_ExpandedIDs: 00000000e824000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -229,7 +229,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000e2240000
+    m_ExpandedIDs: 00000000e824000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -254,9 +254,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 82060000
-    m_LastClickedInstanceID: 1666
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 5a250000b03f0000d2030000581b0000141d00006e0000005c010000781c00000c1c00002c050000360500001a0500000eadffff6828000046050000ea1b0000261c0000f81b0000ec1b0000ee1b000000000000f01b0000f21b0000001c0000dc210000de210000e0210000e8210000bc240000622400003e2400004624000048240000d42400005c240000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -355,10 +355,10 @@ MonoBehaviour:
     y: 0
     width: 974
     height: 947
-  m_MinSize: {x: 104, y: 242}
-  m_MaxSize: {x: 4004, y: 8042}
+  m_MinSize: {x: 104, y: 221}
+  m_MaxSize: {x: 4004, y: 8021}
   vertical: 1
-  controlID: 124
+  controlID: 3635
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -412,14 +412,14 @@ MonoBehaviour:
     width: 970
     height: 656
   m_SceneLighting: 1
-  lastFramingTime: 56.42131266003962
+  lastFramingTime: 593.1887549137805
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0, y: 1.8999996, z: 0}
+    m_Target: {x: -0.123699114, y: 46.319546, z: -10.8817}
     speed: 2
-    m_Value: {x: 0, y: 1.8999996, z: 0}
+    m_Value: {x: -0.123699114, y: 46.319546, z: -10.8817}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -442,13 +442,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.02724605, y: -0.06714226, z: 0.0018385621, w: -0.99738014}
+    m_Target: {x: -0.52974033, y: -0.0061182897, z: 0.0038288333, w: -0.8481293}
     speed: 2
-    m_Value: {x: -0.02724605, y: -0.06714226, z: 0.001838562, w: -0.9973801}
+    m_Value: {x: -0.5297403, y: -0.0061182887, z: 0.0038288329, w: -0.84812915}
   m_Size:
-    m_Target: 1.0195065
+    m_Target: 30.78296
     speed: 2
-    m_Value: 1.0195065
+    m_Value: 30.78296
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -692,7 +692,7 @@ MonoBehaviour:
     height: 926
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 82060000
+    m_SelectedIDs: 
     m_LastClickedID: 0
     m_ExpandedIDs: e6fbffff00000000
     m_RenameOverlay:

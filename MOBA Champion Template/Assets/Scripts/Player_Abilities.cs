@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Player_Abilities : MonoBehaviour {
+	public Texture2D default_reticle;
+	public Texture2D aim_reticle;
+	Vector2 cursor_pos = new Vector2 (11, 11);
+
 	public GameObject Q_object;
 	public GameObject W_object;
 	public GameObject R_object;
@@ -11,7 +15,6 @@ public class Player_Abilities : MonoBehaviour {
 
 	public Player_Stats stat_script;
 
-	public Texture2D target_mouse;
 	public CursorMode cursor = CursorMode.Auto;
 	Vector3 Q_pos;
 
@@ -105,6 +108,7 @@ public class Player_Abilities : MonoBehaviour {
 			if (W_on_CD == false) {
 				if (stat_script.mana >= W_cost) {
 					//change mouse cursor to "targetting_cursor"
+					Cursor.SetCursor(aim_reticle, cursor_pos, CursorMode.Auto);
 					W_selection = true;
 					Debug.Log ("W PRESSED");
 				} 
@@ -135,6 +139,7 @@ public class Player_Abilities : MonoBehaviour {
 						stat_script.UpdateManaBar ();
 					}
 					W_selection = false;
+					Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
 				}
 			}
 		}
@@ -147,6 +152,7 @@ public class Player_Abilities : MonoBehaviour {
 			if (E_on_CD == false) {
 				if (stat_script.mana >= W_cost) {
 					//change mouse cursor to "targetting_cursor"
+					Cursor.SetCursor(aim_reticle, cursor_pos, CursorMode.Auto);
 					E_selection = true;
 				}
 				else
@@ -172,6 +178,7 @@ public class Player_Abilities : MonoBehaviour {
 						stat_script.UpdateManaBar ();
 					}
 					E_selection = false;
+					Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
 				}
 			}
 		}

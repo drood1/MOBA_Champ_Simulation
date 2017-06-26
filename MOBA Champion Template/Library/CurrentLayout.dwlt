@@ -43,7 +43,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 421}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_MinSize: {x: 811, y: 371}
   m_MaxSize: {x: 22006, y: 14021}
   vertical: 0
-  controlID: 123
+  controlID: 3826
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_MinSize: {x: 232, y: 371}
   m_MaxSize: {x: 10002, y: 14021}
   vertical: 1
-  controlID: 65
+  controlID: 3728
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -206,10 +206,10 @@ MonoBehaviour:
     y: 0
     width: 974
     height: 947
-  m_MinSize: {x: 104, y: 242}
-  m_MaxSize: {x: 4004, y: 8042}
+  m_MinSize: {x: 104, y: 221}
+  m_MaxSize: {x: 4004, y: 8021}
   vertical: 1
-  controlID: 124
+  controlID: 3827
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -426,20 +426,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts
+    - Assets/Resources
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Resources
   m_LastFoldersGridSize: 64
   m_LastProjectPath: C:\Users\Karl Olsen\Desktop\MOBA_Champ_Simulation\MOBA Champion
     Template
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 0c260000
-    m_LastClickedID: 9740
-    m_ExpandedIDs: 00000000e624000000ca9a3bffffff7f
+    m_SelectedIDs: ec250000
+    m_LastClickedID: 9708
+    m_ExpandedIDs: 00000000e824000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -467,7 +467,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000e6240000
+    m_ExpandedIDs: 00000000e824000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -494,7 +494,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 5a250000b03f0000d2030000581b0000141d00006e0000005c010000781c00000c1c00002c050000360500001a0500000eadffff6828000046050000ea1b0000261c0000f81b0000ec1b0000ee1b000000000000f01b0000f21b0000001c0000dc210000de210000e0210000e8210000bc240000622400003e2400004624000048240000d42400005c240000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -519,7 +519,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 734}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
   m_DirectoriesAreaWidth: 121
 --- !u!114 &16
@@ -575,14 +575,14 @@ MonoBehaviour:
     width: 970
     height: 656
   m_SceneLighting: 1
-  lastFramingTime: 961.9856659672882
+  lastFramingTime: 593.1887549137805
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -15.337142, y: 4.0117764, z: -9.11026}
+    m_Target: {x: -0.19624442, y: 45.120163, z: -13.681209}
     speed: 2
-    m_Value: {x: -15.337142, y: 4.0117764, z: -9.11026}
+    m_Value: {x: -0.19624442, y: 45.120163, z: -13.681209}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -605,13 +605,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.72342926, y: -0.0070496392, z: 0.0073954733, w: -0.6903236}
+    m_Target: {x: -0.5710623, y: -0.004690033, z: 0.0032702761, w: -0.8208868}
     speed: 2
-    m_Value: {x: -0.7234289, y: -0.007049636, z: 0.0073954696, w: -0.69032323}
+    m_Value: {x: -0.5710623, y: -0.004690033, z: 0.0032702761, w: -0.8208868}
   m_Size:
-    m_Target: 84.7505
+    m_Target: 30.78296
     speed: 2
-    m_Value: 84.7505
+    m_Value: 30.78296
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -778,9 +778,9 @@ MonoBehaviour:
     height: 926
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: c0260000
-    m_LastClickedID: 9920
-    m_ExpandedIDs: e6fbffff00000000c0260000
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: a648ffffe6fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
