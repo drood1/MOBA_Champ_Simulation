@@ -5,7 +5,9 @@ using UnityEngine;
 public class Cube_Damage : MonoBehaviour {
 
 	//Script for storing player's stats (in this case, AP)
-	public Player_Stats stats;
+	public Stats stats;
+
+	public GameObject caster;
 
 	//Enemy's script for daeling damage
 	public Enemy_Stats enemy_stats;
@@ -39,7 +41,8 @@ public class Cube_Damage : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		stats = GameObject.Find("Player").GetComponent<Player_Stats>();
+		caster = this.gameObject.GetComponent<Talon_R_Cubes> ().caster.gameObject;
+		stats = caster.GetComponent<Stats>();
 		AP =  stats.AP;
 	}
 	

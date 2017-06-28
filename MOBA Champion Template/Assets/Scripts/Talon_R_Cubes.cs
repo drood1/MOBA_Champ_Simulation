@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Talon_R_Cubes : MonoBehaviour {
 	public Transform center;
-	public Transform player;
+	public Transform caster = null;
 
 	public float distance;
 	public float dist_to_player;
@@ -20,18 +20,22 @@ public class Talon_R_Cubes : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		center = gameObject.transform.parent;
-		player = GameObject.Find ("Player").transform;
 	}
 
 	void Shrink()	{
 		shrinking = true;
 		//speed = speed * 1.25f;
 	}
-	
+
+	public void SetCaster (GameObject p)
+	{
+		caster = p.transform;
+	}
+
 	// Update is called once per frame
 	void Update () {
 		distance = Vector3.Distance (this.transform.position, center.position);
-		dist_to_player = Vector3.Distance (this.transform.position, player.position);
+		dist_to_player = Vector3.Distance (this.transform.position, caster.position);
 
 		if (shrinking == false) {
 			if (distance < max_dist) {
@@ -42,7 +46,7 @@ public class Talon_R_Cubes : MonoBehaviour {
 			}
 		} 
 		else {
-			transform.position = Vector3.MoveTowards (transform.position, player.transform.position, speed * Time.deltaTime);
+			transform.position = Vector3.MoveTowards (transform.position, caster.transform.position, speed * Time.deltaTime);
 			speed++;
 
 			if (dist_to_player < min_dist)

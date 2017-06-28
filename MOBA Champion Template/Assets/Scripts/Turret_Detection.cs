@@ -9,16 +9,19 @@ public class Turret_Detection : MonoBehaviour {
 	public GameObject tar;
 
 	void OnTriggerEnter(Collider col)	{
-		if (red == true) {
+		if (red == true) { // red bullet
 			if (col.gameObject.tag == "Blue_Champ" || col.gameObject.tag == "Blue_Minion") {
 				Debug.Log ("TARGET SET TO " + col.gameObject.name);
 				t.setTarget (col.gameObject);
 				tar = col.gameObject;
 			}
 		}
-		else {
+		else //red == false (blue bullet)
+		{
 			if (col.gameObject.tag == "Red_Champ" || col.gameObject.tag == "Red_Minion") {
+				Debug.Log ("TARGET SET TO " + col.gameObject.name);
 				t.setTarget (col.gameObject);
+				tar = col.gameObject;
 			}
 		}
 	}

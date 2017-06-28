@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Shield : MonoBehaviour {
-	public Player_Stats stats;
+	public Stats stats;
 
 	public float shield_total = 100;
 	public float remaining_shields;
@@ -15,7 +15,7 @@ public class Shield : MonoBehaviour {
 		remaining_shields = shield_total;
 
 		Debug.Log ("SHIELD CREATED");
-		stats = transform.parent.GetComponent<Player_Stats> ();
+		stats = transform.parent.GetComponent<Stats> ();
 
 		Invoke ("DestroySelf", duration);
 	}

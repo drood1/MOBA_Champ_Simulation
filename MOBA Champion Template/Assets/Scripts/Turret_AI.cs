@@ -5,7 +5,6 @@ using UnityEngine;
 public class Turret_AI : MonoBehaviour {
 	public GameObject target;
 	public GameObject turret_bullet;
-	public GameObject player;
 
 	public float health = 20;
 	public float armor = 10;
@@ -42,7 +41,7 @@ public class Turret_AI : MonoBehaviour {
 			if (Vector3.Distance (this.gameObject.transform.position, target.transform.position) <= range) {
 				//create a turret_bullet object
 				GameObject b = Instantiate (turret_bullet, this.transform.position, Quaternion.identity);
-				b.GetComponent<Enemy_Bullet> ().setInfo (target, actual_damage);
+				b.GetComponent<Turret_Bullet> ().setInfo (target, actual_damage);
 
 				actual_damage = actual_damage * multiplier;
 				Invoke ("Fire", 2);

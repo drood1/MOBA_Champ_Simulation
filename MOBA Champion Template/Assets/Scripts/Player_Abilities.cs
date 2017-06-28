@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Player_Abilities : MonoBehaviour {
+	public bool red;
 	public Texture2D default_reticle;
 	public Texture2D aim_reticle;
 	Vector2 cursor_pos = new Vector2 (11, 11);
@@ -13,7 +14,7 @@ public class Player_Abilities : MonoBehaviour {
 	public GameObject R_object;
 	//Debuff_Manager debuffs;
 
-	public Player_Stats stat_script;
+	public Stats stat_script;
 
 	public CursorMode cursor = CursorMode.Auto;
 	Vector3 Q_pos;
@@ -54,7 +55,7 @@ public class Player_Abilities : MonoBehaviour {
 	void Start () {
 		//target_mouse = Resources.Load ("ret");
 		//debuffs = this.gameObject.GetComponent<Debuff_Manager> ();
-		stat_script = this.gameObject.GetComponent<Player_Stats> ();
+		stat_script = this.gameObject.GetComponent<Stats> ();
 	}
 
 
@@ -125,12 +126,12 @@ public class Player_Abilities : MonoBehaviour {
 				Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 				if (Physics.Raycast(ray, out hit))
 				{
-					if (hit.collider.gameObject.tag == "Blue_Champ")
+					if ((red == false && hit.collider.gameObject.tag == "Blue_Champ") || (red == true && hit.collider.gameObject.tag == "Red_Champ"))
 					{
 						Debug.Log ("PUTTING SHIELD ON " + hit.collider.gameObject.name);
 						//********************APPLY THE SHIELD BUFF HERE***************************************
 						//create the shield object
-						GameObject s = Instantiate(W_object, this.gameObject.transform);
+						GameObject s = Instantiate(W_object, hit.collider.gameObject.transform);
 						s.transform.localPosition = Vector3.zero;
 						//hit.collider.gameObject
 						W_on_CD = true;
@@ -168,7 +169,7 @@ public class Player_Abilities : MonoBehaviour {
 				Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 				if (Physics.Raycast(ray, out hit))
 				{
-					if (hit.collider.gameObject.tag == "Red_Champ" || hit.collider.gameObject.tag == "Red_Minion")
+					if ((red == false && (hit.collider.gameObject.tag == "Red_Champ" || hit.collider.gameObject.tag == "Red_Minion")) || (red == true && (hit.collider.gameObject.tag == "Blue_Champ" || hit.collider.gameObject.tag == "Blue_Minion")))
 					{
 						//in this case, Malefic Visions' ID # is 0
 						hit.collider.gameObject.GetComponent<Debuff_Manager>().ApplyDebuffToSelf(0, this.gameObject);
@@ -193,6 +194,7 @@ public class Player_Abilities : MonoBehaviour {
 				if (stat_script.mana >= R_cost) {
 					time_R_cast = Time.time;
 					temp = Instantiate (R_object, this.transform.position, this.transform.rotation);
+					temp.GetComponent<Talon_R_Cubes> ().SetCaster (this.gameObject);
 					//temp.transform.parent = this.gameObject.transform;
 					R_on_CD = true;
 					stat_script.mana -= R_cost;

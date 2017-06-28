@@ -9,14 +9,14 @@ public class HP_Bar : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		max_hp = g.GetComponent<Player_Stats> ().max_health;
+		max_hp = g.GetComponent<Stats> ().max_health;
 		current_hp = max_hp;
 	}
 
 	// Update is called once per frame
 	void Update () {
 		//change X scale based on current_hp/max_hp
-		current_hp = g.GetComponent<Player_Stats>().health;
+		current_hp = g.GetComponent<Stats>().health;
 		this.transform.localScale = new Vector3((current_hp/max_hp), 1, 1);
 	}
 }
