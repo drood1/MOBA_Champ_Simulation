@@ -11,7 +11,7 @@ public class Turret_Detection : MonoBehaviour {
 	void OnTriggerEnter(Collider col)	{
 		if (red == true) { // red bullet
 			if (col.gameObject.tag == "Blue_Champ" || col.gameObject.tag == "Blue_Minion") {
-				Debug.Log ("TARGET SET TO " + col.gameObject.name);
+				//Debug.Log ("TARGET SET TO " + col.gameObject.name);
 				t.setTarget (col.gameObject);
 				tar = col.gameObject;
 			}
@@ -19,7 +19,7 @@ public class Turret_Detection : MonoBehaviour {
 		else //red == false (blue bullet)
 		{
 			if (col.gameObject.tag == "Red_Champ" || col.gameObject.tag == "Red_Minion") {
-				Debug.Log ("TARGET SET TO " + col.gameObject.name);
+				//Debug.Log ("TARGET SET TO " + col.gameObject.name);
 				t.setTarget (col.gameObject);
 				tar = col.gameObject;
 			}
@@ -28,7 +28,9 @@ public class Turret_Detection : MonoBehaviour {
 
 	void OnTriggerExit(Collider col)	{
 		if (col.gameObject == tar) {
-			Debug.Log (tar.name + " HAS LEFT RANGE");
+			//Debug.Log (tar.name + " HAS LEFT RANGE");
+			if (col.gameObject.tag == "Blue_Champ")
+				Debug.Log ("ASDFASDFASDFA");
 			t.cancelFire ();
 		}
 	}
