@@ -2,9 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//******************************************************************************************************************************
+//THIS SCRIPT IS PURELY FOR THE CUBE MOVEMENT. FOR DAMAGE NUMBERS OR AP, CHECK CUBE_DAMAGE.CS
+//******************************************************************************************************************************
+
 public class Talon_R_Cubes : MonoBehaviour {
 	public Transform center;
 	public Transform caster = null;
+
+	public bool red;
 
 	public float distance;
 	public float dist_to_player;
@@ -20,16 +26,12 @@ public class Talon_R_Cubes : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		center = gameObject.transform.parent;
+		caster = this.gameObject.GetComponentInParent<Q_Center_Despawn> ().caster.transform;
 	}
 
 	void Shrink()	{
 		shrinking = true;
 		//speed = speed * 1.25f;
-	}
-
-	public void SetCaster (GameObject p)
-	{
-		caster = p.transform;
 	}
 
 	// Update is called once per frame
@@ -40,12 +42,10 @@ public class Talon_R_Cubes : MonoBehaviour {
 		if (shrinking == false) {
 			if (distance < max_dist) {
 				transform.position = Vector3.MoveTowards (transform.position, center.transform.position, speed * Time.deltaTime * -1);
-			} 
-			else {
+			} else {
 				Invoke ("Shrink", 2.5f);
 			}
-		} 
-		else {
+		} else {
 			transform.position = Vector3.MoveTowards (transform.position, caster.transform.position, speed * Time.deltaTime);
 			speed++;
 

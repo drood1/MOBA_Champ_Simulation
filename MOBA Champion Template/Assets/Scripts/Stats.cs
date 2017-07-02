@@ -78,7 +78,7 @@ public class Stats : MonoBehaviour {
 		hp_bar.fillAmount = health/max_health;
 
 		if (health <= 0) {
-			Debug.Log ("PLAYER DIED");
+			Debug.Log (this.name + " DIED");
 			Destroy(GameObject.Find("Player_Health_Bar"));
 			Destroy (this.gameObject);
 		}

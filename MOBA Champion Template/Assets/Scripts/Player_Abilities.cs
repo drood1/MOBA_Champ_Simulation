@@ -194,7 +194,8 @@ public class Player_Abilities : MonoBehaviour {
 				if (stat_script.mana >= R_cost) {
 					time_R_cast = Time.time;
 					temp = Instantiate (R_object, this.transform.position, this.transform.rotation);
-					temp.GetComponent<Talon_R_Cubes> ().SetCaster (this.gameObject);
+					//Debug.Log (temp.name);
+					temp.GetComponent<Q_Center_Despawn> ().SetCaster (this.gameObject);
 					//temp.transform.parent = this.gameObject.transform;
 					R_on_CD = true;
 					stat_script.mana -= R_cost;

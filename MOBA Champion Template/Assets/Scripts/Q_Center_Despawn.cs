@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class Q_Center_Despawn : MonoBehaviour {
 
-	public GameObject player;
+	public GameObject caster;
+
+	public bool red;
 
 	// Use this for initialization
 	void Start () {
-		player = GameObject.Find ("Player");
+		
+	}
+
+	public void SetCaster(GameObject p)	{
+		caster = p;
+		red = p.GetComponent<Player_Abilities> ().red;
 	}
 	
 	// Update is called once per frame
