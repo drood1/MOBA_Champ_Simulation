@@ -6,33 +6,45 @@ public class Turret_Detection : MonoBehaviour {
 	public bool red;
 	public Turret_AI t;
 
-	public GameObject tar;
+	public List<GameObject> targets;
+
+	//public GameObject tar;
 
 	void OnTriggerEnter(Collider col)	{
 		if (red == true) { // red bullet
 			if (col.gameObject.tag == "Blue_Champ" || col.gameObject.tag == "Blue_Minion") {
-				//Debug.Log ("TARGET SET TO " + col.gameObject.name);
-				t.setTarget (col.gameObject);
-				tar = col.gameObject;
+				Debug.Log (col.gameObject.name + " ADDED TO TARGET LIST");
+				targets.Add (col.gameObject);
+				t.setTarget (targets[0]);
+				//tar = col.gameObject;
 			}
 		}
 		else //red == false (blue bullet)
 		{
 			if (col.gameObject.tag == "Red_Champ" || col.gameObject.tag == "Red_Minion") {
-				//Debug.Log ("TARGET SET TO " + col.gameObject.name);
-				t.setTarget (col.gameObject);
-				tar = col.gameObject;
+				Debug.Log (col.gameObject.name + " ADDED TO TARGET LIST");
+				targets.Add (col.gameObject);
+				t.setTarget (targets[0]);
+				//tar = col.gameObject;
 			}
 		}
 	}
 
 	void OnTriggerExit(Collider col)	{
-		if (col.gameObject == tar) {
-			//Debug.Log (tar.name + " HAS LEFT RANGE");
-			if (col.gameObject.tag == "Blue_Champ")
-				Debug.Log ("ASDFASDFASDFA");
-			t.cancelFire ();
+		if (red == true) { // red bullet
+			if (col.gameObject.tag == "Blue_Champ" || col.gameObject.tag == "Blue_Minion") {
+				Debug.Log (col.gameObject.name + " REMOVED FROM TARGET LIST");
+				targets.Remove (col.gameObject);
+			}
+		} 
+		else {
+			if (col.gameObject.tag == "Red_Champ" || col.gameObject.tag == "Red_Minion") {
+				Debug.Log (col.gameObject.name + " REMOVED FROM TARGET LIST");
+				targets.Remove (col.gameObject);
+			}	
 		}
+		if (targets.Count == 0)
+			t.cancelFire ();
 	}
 
 	// Use this for initialization

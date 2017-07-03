@@ -6,6 +6,8 @@ public class Turret_AI : MonoBehaviour {
 	public GameObject target;
 	public GameObject turret_bullet;
 
+	public bool red;
+
 	public float health = 20;
 	public float armor = 10;
 
@@ -46,15 +48,13 @@ public class Turret_AI : MonoBehaviour {
 
 	void Fire()	{
 		if (target != null && shot_ready == true) {
-			if (Vector3.Distance (this.gameObject.transform.position, target.transform.position) <= range) {
-				//create a turret_bullet object
-				GameObject b = Instantiate (turret_bullet, this.transform.position, Quaternion.identity);
-				b.GetComponent<Turret_Bullet> ().setInfo (target, actual_damage);
+			//create a turret_bullet object
+			GameObject b = Instantiate (turret_bullet, this.transform.position, Quaternion.identity);
+			b.GetComponent<Turret_Bullet> ().setInfo (target, actual_damage);
 
-				actual_damage = actual_damage * multiplier;
-				shot_ready = false;
-				Invoke ("resetBool", time_between_shots);
-			}
+			actual_damage = actual_damage * multiplier;
+			shot_ready = false;
+			Invoke ("resetBool", time_between_shots);
 		}
 	}
 

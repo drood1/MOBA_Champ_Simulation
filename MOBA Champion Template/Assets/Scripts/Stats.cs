@@ -72,7 +72,7 @@ public class Stats : MonoBehaviour {
 		} 
 		else {
 			health -= final_amount;
-			Debug.Log ("Player took " + final_amount + " damage!");
+			Debug.Log (this.name + " took " + final_amount + " damage!");
 		}
 
 		hp_bar.fillAmount = health/max_health;
