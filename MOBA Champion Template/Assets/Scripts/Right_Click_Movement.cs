@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Right_Click_Movement : MonoBehaviour {
-	public Auto_Attack2 aa_script;
+	public Auto_Attack aa_script;
 
 	public GameObject click_indicator;
 
@@ -19,7 +19,7 @@ public class Right_Click_Movement : MonoBehaviour {
     // Use this for initialization
     void Start () {
         rb = this.gameObject.GetComponent<Rigidbody>();
-		aa_script = this.gameObject.GetComponent<Auto_Attack2> ();
+		aa_script = this.gameObject.GetComponent<Auto_Attack> ();
 		backup_MS = move_speed;
     }
 
@@ -89,7 +89,6 @@ public class Right_Click_Movement : MonoBehaviour {
 					setTarget (hit.collider.gameObject);
 					setTargetLocation (hit.point);
 				}
-
             }
 
         }

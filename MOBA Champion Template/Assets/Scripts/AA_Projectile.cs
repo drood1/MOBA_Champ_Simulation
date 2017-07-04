@@ -7,15 +7,29 @@ public class AA_Projectile : MonoBehaviour {
 	public float damage = 0;
 	public float speed = 0.1f;
 
+	public bool red;
+
 
 	void OnTriggerEnter(Collider col)	{
-		if (col.gameObject.tag == "Red_Champ")	{
-			col.gameObject.GetComponent<Enemy_Stats> ().TakeDamage (damage);
-			Destroy (this.gameObject);
+		//blue bullet
+		if (red == false) {
+			if (col.gameObject.tag == "Red_Champ") {
+				col.gameObject.GetComponent<Stats> ().TakeDamage (damage);
+				Destroy (this.gameObject);
+			} else if (col.gameObject.tag == "Red_Turret") {
+				col.gameObject.GetComponent<Turret_AI> ().TakeDamage (damage);
+				Destroy (this.gameObject);
+			}
 		}
-		else if(col.gameObject.tag == "Red_Turret")	{
-			col.gameObject.GetComponent<Turret_AI> ().TakeDamage (damage);
-			Destroy (this.gameObject);
+		//red bullet
+		else {
+			if (col.gameObject.tag == "Blue_Champ") {
+				col.gameObject.GetComponent<Stats> ().TakeDamage (damage);
+				Destroy (this.gameObject);
+			} else if (col.gameObject.tag == "Blue_Turret") {
+				col.gameObject.GetComponent<Turret_AI> ().TakeDamage (damage);
+				Destroy (this.gameObject);
+			}
 		}
 	}
 

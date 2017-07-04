@@ -48,7 +48,6 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\AA_Projectile.cs" />
      <Compile Include="Assets\Scripts\Auto_Attack.cs" />
-     <Compile Include="Assets\Scripts\Auto_Attack2.cs" />
      <Compile Include="Assets\Scripts\Auto_Shrink_Expand.cs" />
      <Compile Include="Assets\Scripts\BuffManager.cs" />
      <Compile Include="Assets\Scripts\CameraFacingBillboard.cs" />
@@ -73,6 +72,7 @@
      <Compile Include="Assets\Scripts\Turret_AI.cs" />
      <Compile Include="Assets\Scripts\Turret_Bullet.cs" />
      <Compile Include="Assets\Scripts\Turret_Detection.cs" />
+     <Compile Include="Assets\Scripts\Turret_HP_Bar.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

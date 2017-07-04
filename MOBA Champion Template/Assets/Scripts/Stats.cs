@@ -72,14 +72,14 @@ public class Stats : MonoBehaviour {
 		} 
 		else {
 			health -= final_amount;
-			Debug.Log (this.name + " took " + final_amount + " damage!");
+			//Debug.Log (this.name + " took " + final_amount + " damage!");
 		}
 
 		hp_bar.fillAmount = health/max_health;
 
 		if (health <= 0) {
 			Debug.Log (this.name + " DIED");
-			Destroy(GameObject.Find("Player_Health_Bar"));
+			Destroy(transform.Find("Player_Canvas"));
 			Destroy (this.gameObject);
 		}
 

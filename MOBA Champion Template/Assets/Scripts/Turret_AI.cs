@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Turret_AI : MonoBehaviour {
 	public GameObject target;
@@ -8,6 +9,7 @@ public class Turret_AI : MonoBehaviour {
 
 	public bool red;
 
+	public float max_health = 20;
 	public float health = 20;
 	public float armor = 10;
 
@@ -19,11 +21,13 @@ public class Turret_AI : MonoBehaviour {
 	public float actual_damage;
 	public float multiplier = 1.25f;
 
-
+	public Image hp_bar;
 
 	// Use this for initialization
 	void Start () {
 		actual_damage = base_damage;
+		health = max_health;
+		hp_bar = transform.Find ("Turret_HP/HP_Bar").GetComponent<Image> ();
 	}
 
 
@@ -33,15 +37,17 @@ public class Turret_AI : MonoBehaviour {
 		health -= final_amount;
 		if (health <= 0) {
 			Debug.Log ("TURRET DIED");
+			Destroy(transform.Find("Turret_HP"));
 			Destroy (this.gameObject);
 		} 
 		else
 			Debug.Log (this.gameObject.name + " took " + amount + " damage!");
-
+		
+		hp_bar.fillAmount = health/max_health;
 	}
 
 	void resetBool()	{
-		Debug.Log ("RESETTING BOOL");
+		//Debug.Log ("RESETTING BOOL");
 		shot_ready = true;
 		Fire ();
 	}
