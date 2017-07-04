@@ -30,8 +30,8 @@ public class Stats : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		hp_bar = transform.Find ("Player_Canvas/Player_HP_Bar").GetComponent<Image> ();
-		mana_bar = transform.Find ("Player_Canvas/Player_Mana_Bar").GetComponent<Image> ();
+		hp_bar = transform.Find ("UI_Canvas/Player_HP_Bar").GetComponent<Image> ();
+		mana_bar = transform.Find ("UI_Canvas/Player_Mana_Bar").GetComponent<Image> ();
 		abilities = this.gameObject.GetComponent<Player_Abilities> ();
 		health = max_health;
 		mana = max_mana;

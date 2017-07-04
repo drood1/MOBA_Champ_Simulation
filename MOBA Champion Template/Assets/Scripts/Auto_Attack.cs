@@ -28,6 +28,9 @@ public class Auto_Attack : MonoBehaviour {
 
 	public float AA_timer = 1f; //how many seconds long the AA animation is
 
+	Vector3 indicator_pos;
+	float ix;
+	float iz;
 
 	Vector3 dir;
 	public Rigidbody rb;
@@ -80,13 +83,19 @@ public class Auto_Attack : MonoBehaviour {
 			if (Physics.Raycast(ray, out hit))
 			{
 				if (red == false && hit.collider.gameObject.tag.Contains("Red")) {
-					Instantiate (click_indicator, hit.collider.transform.position, Quaternion.identity);
+					ix = hit.collider.transform.position.x;
+					iz = hit.collider.transform.position.z;
+					indicator_pos = new Vector3 (ix, 0.1f, iz);
+					Instantiate (click_indicator, indicator_pos, Quaternion.identity);
 					//Debug.Log ("TARGET IS " + hit.collider.gameObject.name);
 					target = hit.collider.gameObject;
 					shooting = true;
 				}
 				else if (red == true && hit.collider.gameObject.tag.Contains("Blue")) {
-					Instantiate (click_indicator, hit.collider.transform.position, Quaternion.identity);
+					ix = hit.collider.transform.position.x;
+					iz = hit.collider.transform.position.z;
+					indicator_pos = new Vector3 (ix, 0.1f, iz);
+					Instantiate (click_indicator, indicator_pos, Quaternion.identity);
 					//Debug.Log ("TARGET IS " + hit.collider.gameObject.name);
 					target = hit.collider.gameObject;
 					shooting = true;
