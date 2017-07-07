@@ -1,10 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Auto_Attack.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player_Abilities.cs">
     <Files>
       <File FileName="Assets\Scripts\Stats.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Right_Click_Movement.cs" Line="7" Column="31" />
-      <File FileName="Assets\Scripts\Auto_Attack.cs" Line="88" Column="42" />
+      <File FileName="Assets\Scripts\Right_Click_Movement.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Auto_Attack.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Turret_AI.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player_Abilities.cs" Line="156" Column="19" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
