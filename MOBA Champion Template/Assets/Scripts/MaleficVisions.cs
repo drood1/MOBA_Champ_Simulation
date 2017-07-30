@@ -36,6 +36,7 @@ public class MaleficVisions : MonoBehaviour {
 		//at 60 FPS, deal damage every 1 second
 		if(tick_timer / 60 >= time_between_ticks) {
 			stats.TakeDamage (damage_per_tick);
+			//Debug.Log ("TICK DAMAGE AT " + Time.time);
 			tick_timer = 0;
 		}
 

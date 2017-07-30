@@ -41,7 +41,7 @@ public class Turret_AI : MonoBehaviour {
 			Destroy (this.gameObject);
 		} 
 		else
-			Debug.Log (this.gameObject.name + " took " + amount + " damage!");
+			//Debug.Log (this.gameObject.name + " took " + amount + " damage!");
 		
 		hp_bar.fillAmount = health/max_health;
 	}

@@ -12,7 +12,7 @@ public class Debuff_Manager : MonoBehaviour {
 	public void ApplyDebuffToSelf(int debuff_id, GameObject caster)	{
 		//identify the proper debuff based off debuff_id
 		if (debuff_id == 0) {
-			Debug.Log ("MALEFIC VISIONS APPLIED");
+			//Debug.Log ("MALEFIC VISIONS APPLIED");
 			this.gameObject.AddComponent<MaleficVisions>();
 		}
 		//this.gameObject.AddComponent<DebuffApplied>();

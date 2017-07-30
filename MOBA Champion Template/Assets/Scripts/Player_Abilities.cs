@@ -86,7 +86,7 @@ public class Player_Abilities : MonoBehaviour {
 
 					temp = Instantiate (Q_object, Q_pos, this.transform.rotation);
 
-					temp.GetComponent<Mystic_Shot> ().Create (temp_x, temp_z, this.transform.rotation);
+					temp.GetComponent<Mystic_Shot> ().Create (temp_x, temp_z, this.transform.rotation, red);
 					Q_on_CD = true;
 					stat_script.mana -= Q_cost;
 					stat_script.UpdateManaBar ();
@@ -111,7 +111,7 @@ public class Player_Abilities : MonoBehaviour {
 					//change mouse cursor to "targetting_cursor"
 					Cursor.SetCursor(aim_reticle, cursor_pos, CursorMode.Auto);
 					W_selection = true;
-					Debug.Log ("W PRESSED");
+					//Debug.Log ("W PRESSED");
 				} 
 				else
 					Debug.Log ("NOT ENOUGH MANA TO CAST W");
@@ -128,7 +128,7 @@ public class Player_Abilities : MonoBehaviour {
 				{
 					if ((red == false && hit.collider.gameObject.tag == "Blue_Champ") || (red == true && hit.collider.gameObject.tag == "Red_Champ"))
 					{
-						Debug.Log ("PUTTING SHIELD ON " + hit.collider.gameObject.name);
+						//Debug.Log ("PUTTING SHIELD ON " + hit.collider.gameObject.name);
 						//********************APPLY THE SHIELD BUFF HERE***************************************
 						//create the shield object
 						GameObject s = Instantiate(W_object, hit.collider.gameObject.transform);

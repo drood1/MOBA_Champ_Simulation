@@ -11,6 +11,7 @@ public class AA_Projectile : MonoBehaviour {
 
 
 	void OnTriggerEnter(Collider col)	{
+		/*
 		//blue bullet
 		if (red == false) {
 			if (col.gameObject.tag == "Red_Champ") {
@@ -30,6 +31,15 @@ public class AA_Projectile : MonoBehaviour {
 				col.gameObject.GetComponent<Turret_AI> ().TakeDamage (damage);
 				Destroy (this.gameObject);
 			}
+		}
+		*/
+		if (col.gameObject == target) {
+			if(col.gameObject.tag.Contains("Turret"))
+				col.gameObject.GetComponent<Turret_AI> ().TakeDamage (damage);
+			else
+				col.gameObject.GetComponent<Stats> ().TakeDamage (damage);
+
+			Destroy (this.gameObject);
 		}
 	}
 
@@ -51,7 +61,8 @@ public class AA_Projectile : MonoBehaviour {
 	void Update () {
 		if (target != null) {
 			transform.position = Vector3.MoveTowards (this.transform.position, target.transform.position, speed);
-		} else
+		} 
+		else
 			Destroy (this.gameObject);
 
 	}

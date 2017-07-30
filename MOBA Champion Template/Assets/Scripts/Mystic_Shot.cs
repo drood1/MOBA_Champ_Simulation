@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Mystic_Shot : MonoBehaviour {
 	public float speed = 100000000f;
-	public float base_damage = 20;
+	public float base_damage = 200000;
 
+	public bool red;
 
 	public Vector3 dir;
 
@@ -19,7 +20,7 @@ public class Mystic_Shot : MonoBehaviour {
 
 	public float dist_to_end;
 
-	public void Create(float tar_x, float tar_z, Quaternion rot)	{
+	public void Create(float tar_x, float tar_z, Quaternion rot, bool r)	{
 		//*****************NEED TO CHANGE ROTATION TO BE CONSISTENT WITH DIRECTION OF MOVEMENT
 
 		float dir_x = tar_x - transform.position.x;
@@ -35,15 +36,23 @@ public class Mystic_Shot : MonoBehaviour {
 
 		this.transform.rotation = Quaternion.Euler(0, theta, 0);
 
-
+		red = r;
 		//test_obj = (GameObject)Resources.Load ("Test_Cube");
 		//Instantiate (test_obj, end_pos, Quaternion.identity);
 	}
 
 	void OnTriggerEnter(Collider col)	{
-		if (col.gameObject.tag == "Red_Minion" || col.gameObject.tag == "Red_Champ") {
-			col.gameObject.GetComponent<Enemy_Stats> ().TakeDamage (base_damage);
-			Destroy (this.gameObject);
+		if (red == false) {
+			if (col.gameObject.tag == "Red_Minion" || col.gameObject.tag == "Red_Champ") {
+				col.gameObject.GetComponent<Stats> ().TakeDamage (base_damage);
+				Destroy (this.gameObject);
+			}
+		} 
+		else {
+			if (col.gameObject.tag == "Blue_Minion" || col.gameObject.tag == "Blue_Champ") {
+				col.gameObject.GetComponent<Stats> ().TakeDamage (base_damage);
+				Destroy (this.gameObject);
+			}
 		}
 	}
 

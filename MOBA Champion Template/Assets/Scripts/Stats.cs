@@ -7,6 +7,8 @@ public class Stats : MonoBehaviour {
 	public Player_Abilities abilities;
 	public Shield current_shield;
 
+	public int level = 1;
+
 	public float max_health = 100;
 	public float health;
 
@@ -62,11 +64,11 @@ public class Stats : MonoBehaviour {
 			current_shield = GameObject.Find ("Player/Shield(Clone)").GetComponent<Shield> ();
 			if (current_shield.remaining_shields > final_amount) {
 				current_shield.remaining_shields -= final_amount;
-				Debug.Log ("Took " + final_amount + " damage! Remaining shields: " + current_shield.remaining_shields);
+				//Debug.Log ("Took " + final_amount + " damage! Remaining shields: " + current_shield.remaining_shields);
 			} 
 			else {
 				health -= (final_amount - current_shield.remaining_shields);
-				Debug.Log ("Player took " + (final_amount - current_shield.remaining_shields) + " damage!");
+				//Debug.Log ("Player took " + (final_amount - current_shield.remaining_shields) + " damage!");
 				current_shield.DestroySelf ();
 			}
 		} 

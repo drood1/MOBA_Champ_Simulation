@@ -13,7 +13,7 @@ public class Enemy_Stats : MonoBehaviour {
 	public float MR = 40;
 
 	public void TakeDamage(float amount)	{
-		Debug.Log (this.gameObject.name + " took " + amount + " damage!");
+		//Debug.Log (this.gameObject.name + " took " + amount + " damage!");
 		health -= amount;
 		if (health <= 0)
 			Destroy (this.gameObject);

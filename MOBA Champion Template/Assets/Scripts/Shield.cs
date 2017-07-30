@@ -14,14 +14,14 @@ public class Shield : MonoBehaviour {
 	void Start () {
 		remaining_shields = shield_total;
 
-		Debug.Log ("SHIELD CREATED");
+		//Debug.Log ("SHIELD CREATED");
 		stats = transform.parent.GetComponent<Stats> ();
 
 		Invoke ("DestroySelf", duration);
 	}
 
 	public void DestroySelf()	{
-		Debug.Log ("SHIELD EXPIRED");
+		//Debug.Log ("SHIELD EXPIRED");
 		Destroy (this.gameObject);
 	}
 

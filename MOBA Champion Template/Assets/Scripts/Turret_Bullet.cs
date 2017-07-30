@@ -35,6 +35,9 @@ public class Turret_Bullet : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		this.gameObject.transform.position = Vector3.MoveTowards (this.transform.position, target.transform.position, (move_speed * Time.deltaTime));
+		if (target != null)
+			this.gameObject.transform.position = Vector3.MoveTowards (this.transform.position, target.transform.position, (move_speed * Time.deltaTime));
+		else
+			Destroy (this.gameObject);
 	}
 }

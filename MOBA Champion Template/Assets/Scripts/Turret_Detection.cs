@@ -13,7 +13,7 @@ public class Turret_Detection : MonoBehaviour {
 		//if this turret is red and a blue champion or minion enters range, add it to the list of possible targets
 		if (red == true) { 
 			if (col.gameObject.tag == "Blue_Champ" || col.gameObject.tag == "Blue_Minion") {
-				Debug.Log (col.gameObject.name + " ADDED TO TARGET LIST");
+				//Debug.Log (col.gameObject.name + " ADDED TO TARGET LIST");
 				targets.Add (col.gameObject);
 				t.setTarget (targets[0]);
 			}
@@ -21,7 +21,7 @@ public class Turret_Detection : MonoBehaviour {
 		else //red == false (blue turret)
 		{
 			if (col.gameObject.tag == "Red_Champ" || col.gameObject.tag == "Red_Minion") {
-				Debug.Log (col.gameObject.name + " ADDED TO TARGET LIST");
+				//Debug.Log (col.gameObject.name + " ADDED TO TARGET LIST");
 				targets.Add (col.gameObject);
 				t.setTarget (targets[0]);
 			}
@@ -32,14 +32,14 @@ public class Turret_Detection : MonoBehaviour {
 		//if this turret is red and the object that left range is a blue champ or minion, remove it from the list of possible targets
 		if (red == true) {
 			if (col.gameObject.tag == "Blue_Champ" || col.gameObject.tag == "Blue_Minion") {
-				Debug.Log (col.gameObject.name + " REMOVED FROM TARGET LIST");
+				//Debug.Log (col.gameObject.name + " REMOVED FROM TARGET LIST");
 				targets.Remove (col.gameObject);
 			}
 		} 
 		//if this turret is blue and the object that left range is a red champ or minion, remove it from the list of possible targets
 		else {
 			if (col.gameObject.tag == "Red_Champ" || col.gameObject.tag == "Red_Minion") {
-				Debug.Log (col.gameObject.name + " REMOVED FROM TARGET LIST");
+				//Debug.Log (col.gameObject.name + " REMOVED FROM TARGET LIST");
 				targets.Remove (col.gameObject);
 			}	
 		}
