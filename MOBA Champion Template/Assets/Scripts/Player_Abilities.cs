@@ -7,6 +7,12 @@ public class Player_Abilities : MonoBehaviour {
 	public bool red;
 	public Texture2D default_reticle;
 	public Texture2D aim_reticle;
+
+	CursorMode curMode = CursorMode.Auto;
+	Vector2 hotSpot = new Vector2(12, 12);
+
+	public Texture2D test;
+
 	Vector2 cursor_pos = new Vector2 (11, 11);
 
 	public GameObject Q_object;
@@ -56,12 +62,19 @@ public class Player_Abilities : MonoBehaviour {
 		//target_mouse = Resources.Load ("ret");
 		//debuffs = this.gameObject.GetComponent<Debuff_Manager> ();
 		stat_script = this.gameObject.GetComponent<Stats> ();
+		aim_reticle = Resources.Load("ret2") as Texture2D;
+
+		test = new Texture2D (24, 24);
+		test = Resources.Load("ret2") as Texture2D;
 	}
 
 
 
 	// Update is called once per frame
 	void Update () {
+		if(Input.GetKeyDown(KeyCode.H))
+			
+
 		//Q ABILITY*******************************************************************************************************************************
 		if (Input.GetKeyDown (KeyCode.Q)) {
 			if (Q_on_CD == false) {
@@ -109,7 +122,7 @@ public class Player_Abilities : MonoBehaviour {
 			if (W_on_CD == false) {
 				if (stat_script.mana >= W_cost) {
 					//change mouse cursor to "targetting_cursor"
-					Cursor.SetCursor(aim_reticle, cursor_pos, CursorMode.Auto);
+					Cursor.SetCursor(aim_reticle, hotSpot, curMode);
 					W_selection = true;
 					//Debug.Log ("W PRESSED");
 				} 
@@ -140,7 +153,7 @@ public class Player_Abilities : MonoBehaviour {
 						stat_script.UpdateManaBar ();
 					}
 					W_selection = false;
-					Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+					Cursor.SetCursor(null, Vector2.zero, curMode);
 				}
 			}
 		}
@@ -153,7 +166,7 @@ public class Player_Abilities : MonoBehaviour {
 			if (E_on_CD == false) {
 				if (stat_script.mana >= W_cost) {
 					//change mouse cursor to "targetting_cursor"
-					Cursor.SetCursor(aim_reticle, cursor_pos, CursorMode.Auto);
+					Cursor.SetCursor(aim_reticle, hotSpot, curMode);
 					E_selection = true;
 				}
 				else
@@ -179,7 +192,7 @@ public class Player_Abilities : MonoBehaviour {
 						stat_script.UpdateManaBar ();
 					}
 					E_selection = false;
-					Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+					Cursor.SetCursor(null, Vector2.zero, curMode);
 				}
 			}
 		}
