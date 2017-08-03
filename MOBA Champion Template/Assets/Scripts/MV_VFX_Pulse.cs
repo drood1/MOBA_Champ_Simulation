@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MV_VFX_Pulse : MonoBehaviour {
-	public float max_size = 0.6f;
+	public float max_size = 1.2f;
 
-	public float min_size = 0.2f;
+	public float min_size = 0.8f;
 
 	public bool shrinking = false;
 

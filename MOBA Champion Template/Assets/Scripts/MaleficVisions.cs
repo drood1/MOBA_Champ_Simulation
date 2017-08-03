@@ -6,7 +6,7 @@ public class MaleficVisions : MonoBehaviour {
 	public GameObject caster;
 	public GameObject vfx;
 	public Enemy_Stats stats;
-	public float total_duration = 5;
+	public float total_duration = 50;
 	public float time_applied;
 	public float remaining_duration;
 

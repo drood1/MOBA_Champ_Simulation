@@ -71,10 +71,7 @@ public class Player_Abilities : MonoBehaviour {
 
 
 	// Update is called once per frame
-	void Update () {
-		if(Input.GetKeyDown(KeyCode.H))
-			
-
+	void Update () {	
 		//Q ABILITY*******************************************************************************************************************************
 		if (Input.GetKeyDown (KeyCode.Q)) {
 			if (Q_on_CD == false) {
