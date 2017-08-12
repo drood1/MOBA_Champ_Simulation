@@ -9,18 +9,18 @@ public class MV_VFX_Pulse : MonoBehaviour {
 
 	public bool shrinking = false;
 
-	Vector3 increment = new Vector3(0.0075f, 0.0075f, 0.0075f);
+	public Vector3 increment = new Vector3(0.0075f, 0.0075f, 0.0075f);
 
 	// Use this for initialization
 	void Start () {
 		
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-		if (transform.localScale.x > max_size)
+		if (transform.localScale.y > max_size)
 			shrinking = true;
-		if (transform.localScale.x < min_size)
+		if (transform.localScale.y < min_size)
 			shrinking = false;
 
 

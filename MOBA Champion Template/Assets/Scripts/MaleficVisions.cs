@@ -5,12 +5,12 @@ using UnityEngine;
 public class MaleficVisions : MonoBehaviour {
 	public GameObject caster;
 	public GameObject vfx;
-	public Enemy_Stats stats;
-	public float total_duration = 50;
+	public Stats stats;
+	public float total_duration = 10;
 	public float time_applied;
 	public float remaining_duration;
 
-	public float damage_per_tick = 5;
+	public float damage_per_tick = 10;
 
 	public float time_between_ticks = 1;
 
@@ -19,7 +19,7 @@ public class MaleficVisions : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		stats = this.gameObject.GetComponent<Enemy_Stats> ();
+		stats = this.gameObject.GetComponent<Stats> ();
 		time_applied = Time.time;
 		remaining_duration = total_duration;
 		//Debug.Log (this.gameObject.name + " has received Malefic Visions at " + time_applied);

@@ -45,6 +45,7 @@ public class Stats : MonoBehaviour {
 
 	//should add an "index" argument (0 = physical, 1 = magic, 2 = true) in the future
 	public void TakeDamage(float amount)	{
+		Debug.Log ("AMOUNT: " + amount);
 		float final_amount = amount;
 		//calculate mitigation
 
@@ -60,8 +61,8 @@ public class Stats : MonoBehaviour {
 		}
 		*/
 
-		if (GameObject.Find ("Player/Shield(Clone)") != null) {
-			current_shield = GameObject.Find ("Player/Shield(Clone)").GetComponent<Shield> ();
+		if (this.transform.Find ("Shield(Clone)") != null) {
+			current_shield = this.transform.Find ("Shield(Clone)").GetComponent<Shield> ();
 			if (current_shield.remaining_shields > final_amount) {
 				current_shield.remaining_shields -= final_amount;
 				//Debug.Log ("Took " + final_amount + " damage! Remaining shields: " + current_shield.remaining_shields);
@@ -74,8 +75,10 @@ public class Stats : MonoBehaviour {
 		} 
 		else {
 			health -= final_amount;
-			//Debug.Log (this.name + " took " + final_amount + " damage!");
+			//Debug.Log ("NO SHIELD, " + this.name + " took " + final_amount + " damage!");
 		}
+
+		//Debug.Log ("DONE WITH SHIELD CHECKS");
 
 		hp_bar.fillAmount = health/max_health;
 
