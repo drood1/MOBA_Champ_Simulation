@@ -24,6 +24,7 @@ public class MV_VFX_Pulse : MonoBehaviour {
 			shrinking = false;
 
 
+
 		if (shrinking == true) {
 			//Debug.Log ("A");
 			transform.localScale -= increment;
