@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -83,6 +84,9 @@ public class Stats : MonoBehaviour {
 		hp_bar.fillAmount = health/max_health;
 
 		if (health <= 0) {
+			if (this.gameObject.tag.Contains ("Champ"))
+				SceneManager.LoadScene ("main");
+
 			Debug.Log (this.name + " DIED");
 			Destroy(transform.Find("Player_Canvas"));
 			Destroy (this.gameObject);
