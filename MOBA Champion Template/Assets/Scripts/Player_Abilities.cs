@@ -13,7 +13,7 @@ public class Player_Abilities : MonoBehaviour {
 
 	public Texture2D test;
 
-	Vector2 cursor_pos = new Vector2 (11, 11);
+	//Vector2 cursor_pos = new Vector2 (11, 11);
 
 	public GameObject Q_object;
 	public GameObject W_object;

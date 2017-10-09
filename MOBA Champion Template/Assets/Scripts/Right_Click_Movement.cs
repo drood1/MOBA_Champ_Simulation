@@ -93,5 +93,8 @@ public class Right_Click_Movement : MonoBehaviour {
 
         }
 
+		if (Input.GetKeyDown (KeyCode.Escape))
+			Application.Quit();
+
     }
 }

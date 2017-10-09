@@ -13,7 +13,7 @@ public class Turret_Bullet : MonoBehaviour {
 	void OnTriggerEnter(Collider col)	{
 		if (col.gameObject.tag.Contains("Red") && red == false) {
 			col.gameObject.GetComponent<Stats> ().TakeDamage (damage);
-			Debug.Log ("HITTING TO DEAL THIS MUCH DAMAGE: " + damage);
+			//Debug.Log ("HITTING TO DEAL THIS MUCH DAMAGE: " + damage);
 			Destroy (this.gameObject);
 		}
 		else if(col.gameObject.tag.Contains("Blue") && red == true) 	{

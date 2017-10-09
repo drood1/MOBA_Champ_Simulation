@@ -15,7 +15,10 @@ public class Q_Center_Despawn : MonoBehaviour {
 
 	public void SetCaster(GameObject p)	{
 		caster = p;
-		red = p.GetComponent<Player_Abilities> ().red;
+		if(p.GetComponent<Player_Abilities> () != null)
+			red = p.GetComponent<Player_Abilities> ().red;
+		else if(p.GetComponent<Player_Abilities_2> () != null)
+			red = p.GetComponent<Player_Abilities_2> ().red;
 	}
 	
 	// Update is called once per frame

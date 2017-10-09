@@ -41,7 +41,7 @@ public class Cube_Damage : MonoBehaviour {
 			//Destroy(this.gameObject);
 		} 
 		else if (red == true && (col.gameObject.tag == "Blue_Champ" || col.gameObject.tag == "Blue_Minion")) {
-			Debug.Log ("RED CUBES HITTING BLUE CHAMP");
+			//Debug.Log ("RED CUBES HITTING BLUE CHAMP");
 			enemy_stats = col.gameObject.GetComponent<Stats> ();
 
 			//deal damage to the enemy
@@ -50,9 +50,9 @@ public class Cube_Damage : MonoBehaviour {
 			//Debug.Log ("RAW DAMAGE: " + raw_damage);
 
 			//factor in enemy's defenses for damage
-			Debug.Log("RAW DAMAGE: " + raw_damage);
-			Debug.Log("ENEMY MR: " + enemy_stats.MR);
-			Debug.Log("MAGIC PEN: " + stats.magic_pen);
+			//Debug.Log("RAW DAMAGE: " + raw_damage);
+			//Debug.Log("ENEMY MR: " + enemy_stats.MR);
+			//Debug.Log("MAGIC PEN: " + stats.magic_pen);
 
 			float total_damage = raw_damage * (100 / (100 + enemy_stats.MR - stats.magic_pen));
 

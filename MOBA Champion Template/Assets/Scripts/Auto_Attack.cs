@@ -39,7 +39,11 @@ public class Auto_Attack : MonoBehaviour {
 	void Start () {
 		move_script = this.gameObject.GetComponent<Right_Click_Movement> ();
 		rb = this.gameObject.GetComponent<Rigidbody>();
-		red = this.gameObject.GetComponent<Player_Abilities> ().red;
+
+		if(this.gameObject.GetComponent<Player_Abilities> () != null)
+			red = this.gameObject.GetComponent<Player_Abilities> ().red;
+		else if(this.gameObject.GetComponent<Player_Abilities_2> () != null)
+			red = this.gameObject.GetComponent<Player_Abilities_2> ().red;
 	}
 
 	void AA_Anim()	{

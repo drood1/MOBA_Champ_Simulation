@@ -46,7 +46,7 @@ public class Stats : MonoBehaviour {
 
 	//should add an "index" argument (0 = physical, 1 = magic, 2 = true) in the future
 	public void TakeDamage(float amount)	{
-		Debug.Log ("AMOUNT: " + amount);
+		//Debug.Log ("AMOUNT: " + amount);
 		float final_amount = amount;
 		//calculate mitigation
 
@@ -84,7 +84,7 @@ public class Stats : MonoBehaviour {
 		hp_bar.fillAmount = health/max_health;
 
 		if (health <= 0) {
-			if (this.gameObject.tag.Contains ("Champ"))
+			if (this.gameObject.name.Contains ("Champ") && !(this.gameObject.name.Contains ("AI")))
 				SceneManager.LoadScene ("main");
 
 			Debug.Log (this.name + " DIED");

@@ -37,7 +37,6 @@ public class Turret_AI : MonoBehaviour {
 		health -= final_amount;
 		if (health <= 0) {
 			Debug.Log ("TURRET DIED");
-			Destroy(transform.Find("Turret_HP"));
 			Destroy (this.gameObject);
 		} 
 		else
