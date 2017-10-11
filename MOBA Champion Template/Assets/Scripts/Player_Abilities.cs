@@ -20,6 +20,16 @@ public class Player_Abilities : MonoBehaviour {
 	public GameObject R_object;
 	//Debuff_Manager debuffs;
 
+	public Image Q_CD_Bar;
+	public Image W_CD_Bar;
+	public Image E_CD_Bar;
+	public Image R_CD_Bar;
+
+	public Text Q_CD_Num;
+	public Text W_CD_Num;
+	public Text E_CD_Num;
+	public Text R_CD_Num;
+
 	public Stats stat_script;
 
 	public CursorMode cursor = CursorMode.Auto;
@@ -66,6 +76,17 @@ public class Player_Abilities : MonoBehaviour {
 
 		test = new Texture2D (24, 24);
 		test = Resources.Load("ret2") as Texture2D;
+
+		Q_CD_Bar = GameObject.Find ("Q_CD").GetComponent<Image> ();
+		W_CD_Bar = GameObject.Find ("W_CD").GetComponent<Image> ();
+		E_CD_Bar = GameObject.Find ("E_CD").GetComponent<Image> ();
+		R_CD_Bar = GameObject.Find ("R_CD").GetComponent<Image> ();
+
+		Q_CD_Num = GameObject.Find ("Q_CD_Number").GetComponent<Text> ();
+		W_CD_Num = GameObject.Find ("W_CD_Number").GetComponent<Text> ();
+		E_CD_Num = GameObject.Find ("E_CD_Number").GetComponent<Text> ();
+		R_CD_Num = GameObject.Find ("R_CD_Number").GetComponent<Text> ();
+
 	}
 
 
@@ -110,8 +131,16 @@ public class Player_Abilities : MonoBehaviour {
 			}
 		}
 		if (Q_on_CD == true) {
-			if (Time.time >= time_Q_cast + Q_CD)
+			if (Time.time >= time_Q_cast + Q_CD) {
 				Q_on_CD = false;
+				Q_CD_Bar.fillAmount = 0;
+				Q_CD_Num.text = "";
+			} 
+			else {
+				Q_CD_Bar.fillAmount = remaining_Q_CD / Q_CD;
+				Q_CD_Num.text = (Mathf.Round(remaining_Q_CD * 10f) / 10f).ToString();
+
+			}
 		}
 
 		//W ABILITY*******************************************************************************************************************************
@@ -155,9 +184,17 @@ public class Player_Abilities : MonoBehaviour {
 			}
 		}
 		if (W_on_CD == true) {
-			if (Time.time >= time_W_cast + W_CD)
+			if (Time.time >= time_W_cast + W_CD) {
 				W_on_CD = false;
-		}	
+				W_CD_Bar.fillAmount = 0;
+				W_CD_Num.text = "";
+			} 
+			else {
+				W_CD_Bar.fillAmount = remaining_W_CD / W_CD;
+				W_CD_Num.text = (Mathf.Round(remaining_W_CD * 10f) / 10f).ToString();
+
+			}
+		}
 		//E ABILITY*******************************************************************************************************************************
 		if (Input.GetKeyDown (KeyCode.E)) {
 			if (E_on_CD == false) {
@@ -194,8 +231,16 @@ public class Player_Abilities : MonoBehaviour {
 			}
 		}
 		if (E_on_CD == true) {
-			if (Time.time >= time_E_cast + E_CD)
+			if (Time.time >= time_E_cast + E_CD) {
 				E_on_CD = false;
+				E_CD_Bar.fillAmount = 0;
+				E_CD_Num.text = "";
+			} 
+			else {
+				E_CD_Bar.fillAmount = remaining_E_CD / E_CD;
+				E_CD_Num.text = (Mathf.Round(remaining_E_CD * 10f) / 10f).ToString();
+
+			}
 		}
 
 		//R ABILITY*******************************************************************************************************************************
@@ -219,14 +264,27 @@ public class Player_Abilities : MonoBehaviour {
 			}
 		}
 		if (R_on_CD == true) {
-			if (Time.time >= time_R_cast + R_CD)
+			if (Time.time >= time_R_cast + R_CD) {
 				R_on_CD = false;
+				R_CD_Bar.fillAmount = 0;
+				R_CD_Num.text = "";
+			} 
+			else {
+				R_CD_Bar.fillAmount = remaining_R_CD / R_CD;
+				R_CD_Num.text = (Mathf.Round(remaining_R_CD * 10f) / 10f).ToString();
+
+			}
 		}
 
 		//update CD
-		remaining_Q_CD = time_Q_cast + Q_CD - Time.time;
-		remaining_W_CD = time_W_cast + W_CD - Time.time;
-		remaining_E_CD = time_E_cast + E_CD - Time.time;
-		remaining_R_CD = time_R_cast + R_CD - Time.time;
+		if(Q_on_CD)
+			remaining_Q_CD = time_Q_cast + Q_CD - Time.time;
+		if(W_on_CD)
+			remaining_W_CD = time_W_cast + W_CD - Time.time;
+		if(E_on_CD)
+			remaining_E_CD = time_E_cast + E_CD - Time.time;
+		if(R_on_CD)
+			remaining_R_CD = time_R_cast + R_CD - Time.time;
+
 	}
 }
