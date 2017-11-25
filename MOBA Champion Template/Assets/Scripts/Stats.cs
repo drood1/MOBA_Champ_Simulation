@@ -30,18 +30,24 @@ public class Stats : MonoBehaviour {
 
 	public Image hp_bar;
 	public Image mana_bar;
+	public Image ui_hp;
+	public Image ui_mana;
+
 
 	// Use this for initialization
 	void Start () {
 		hp_bar = transform.Find ("UI_Canvas/Player_HP_Bar").GetComponent<Image> ();
 		mana_bar = transform.Find ("UI_Canvas/Player_Mana_Bar").GetComponent<Image> ();
+		ui_hp = GameObject.Find ("UI_HP_Bar").GetComponent<Image> ();
+		ui_mana = GameObject.Find ("UI_Mana_Bar").GetComponent<Image> ();
 		abilities = this.gameObject.GetComponent<Player_Abilities> ();
 		health = max_health;
 		mana = max_mana;
 	}
 
 	public void UpdateManaBar()	{
-		mana_bar.fillAmount = mana/max_mana;
+		mana_bar.fillAmount = mana / max_mana;
+		ui_mana.fillAmount = mana / max_mana;
 	}
 
 	//should add an "index" argument (0 = physical, 1 = magic, 2 = true) in the future
@@ -81,7 +87,9 @@ public class Stats : MonoBehaviour {
 
 		//Debug.Log ("DONE WITH SHIELD CHECKS");
 
-		hp_bar.fillAmount = health/max_health;
+		hp_bar.fillAmount = health / max_health;
+		if(!(this.gameObject.name.Contains("AI")))
+			ui_hp.fillAmount = health / max_health;
 
 		if (health <= 0) {
 			if (this.gameObject.name.Contains ("Champ") && !(this.gameObject.name.Contains ("AI")))
