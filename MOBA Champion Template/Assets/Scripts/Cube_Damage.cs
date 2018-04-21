@@ -70,8 +70,8 @@ public class Cube_Damage : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//AP = this.gameObject.GetComponentInParent<Talon_R_Cubes> ().AP;
-		red = this.gameObject.GetComponentInParent<Q_Center_Despawn>().red;
-		caster = this.gameObject.GetComponentInParent<Q_Center_Despawn> ().caster;
+		red = this.gameObject.GetComponentInParent<R_Center_Despawn>().red;
+		caster = this.gameObject.GetComponentInParent<R_Center_Despawn> ().caster;
 		stats = caster.GetComponent<Stats> ();
 	}
 	

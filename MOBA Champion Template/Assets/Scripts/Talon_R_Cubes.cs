@@ -26,7 +26,7 @@ public class Talon_R_Cubes : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		center = gameObject.transform.parent;
-		caster = this.gameObject.GetComponentInParent<Q_Center_Despawn> ().caster.transform;
+		caster = this.gameObject.GetComponentInParent<R_Center_Despawn> ().caster.transform;
 	}
 
 	void Shrink()	{

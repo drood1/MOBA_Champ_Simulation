@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Q_Center_Despawn : MonoBehaviour {
-
+public class R_Center_Despawn : MonoBehaviour {
+	//This script serves as "clean up" to delete the invisible
+	//center object of the R prefab once all the children are deleted
 	public GameObject caster;
 
 	public bool red;
