@@ -1,9 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player_Abilities.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Auto_Attack.cs">
     <Files>
       <File FileName="Assets\Scripts\Player_Abilities.cs" Line="267" Column="27" />
-      <File FileName="..\..\FPS_Experimentation\Hitscan_FPS\Assets\Scripts\Jetpack.cs" Line="74" Column="3" />
+      <File FileName="Assets\Scripts\Right_Click_Movement.cs" Line="97" Column="71" />
+      <File FileName="Assets\Scripts\Auto_Attack.cs" Line="16" Column="93" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
