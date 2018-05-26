@@ -12,7 +12,8 @@ public class Turret_Detection : MonoBehaviour {
 	void OnTriggerEnter(Collider col)	{
 		//if this turret is red and a blue champion or minion enters range, add it to the list of possible targets
 		if (red == true) { 
-			if (col.gameObject.tag == "Blue_Champ" || col.gameObject.tag == "Blue_Minion") {
+			//if (col.gameObject.tag == "Blue_Champ" || col.gameObject.tag == "Blue_Minion") {
+			if(col.gameObject.tag.Contains("Blue"))	{
 				//Debug.Log (col.gameObject.name + " ADDED TO TARGET LIST");
 				targets.Add (col.gameObject);
 				t.setTarget (targets[0]);
@@ -20,7 +21,8 @@ public class Turret_Detection : MonoBehaviour {
 		}
 		else //red == false (blue turret)
 		{
-			if (col.gameObject.tag == "Red_Champ" || col.gameObject.tag == "Red_Minion") {
+			if(col.gameObject.tag.Contains("Red"))	{
+			//if (col.gameObject.tag == "Red_Champ" || col.gameObject.tag == "Red_Minion") {
 				//Debug.Log (col.gameObject.name + " ADDED TO TARGET LIST");
 				targets.Add (col.gameObject);
 				t.setTarget (targets[0]);

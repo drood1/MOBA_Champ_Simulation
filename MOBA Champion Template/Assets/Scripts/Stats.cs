@@ -28,8 +28,14 @@ public class Stats : MonoBehaviour {
 
 	public float CDR = 0;
 
+	public Text hp_text;
+	public Text mana_text;
+
+	//hp_bar and mana_bar are the smaller bars above a player's head
 	public Image hp_bar;
 	public Image mana_bar;
+
+	//ui_hp and ui_mana are the larger bars that stay static in the bottom-center of the screen 
 	public Image ui_hp;
 	public Image ui_mana;
 
@@ -38,16 +44,26 @@ public class Stats : MonoBehaviour {
 	void Start () {
 		hp_bar = transform.Find ("UI_Canvas/Player_HP_Bar").GetComponent<Image> ();
 		mana_bar = transform.Find ("UI_Canvas/Player_Mana_Bar").GetComponent<Image> ();
+		hp_text = GameObject.Find ("UI_HP_Text").GetComponent<Text> ();
+		mana_text = GameObject.Find ("UI_Mana_Text").GetComponent<Text> ();
 		ui_hp = GameObject.Find ("UI_HP_Bar").GetComponent<Image> ();
 		ui_mana = GameObject.Find ("UI_Mana_Bar").GetComponent<Image> ();
 		abilities = this.gameObject.GetComponent<Player_Abilities> ();
 		health = max_health;
 		mana = max_mana;
+
+		UpdateHPText ();
+		UpdateManaBar ();
+	}
+
+	void UpdateHPText()	{
+		hp_text.text = (int)health + "/" + max_health;
 	}
 
 	public void UpdateManaBar()	{
 		mana_bar.fillAmount = mana / max_mana;
 		ui_mana.fillAmount = mana / max_mana;
+		mana_text.text = mana + "/" + max_mana;
 	}
 
 	//should add an "index" argument (0 = physical, 1 = magic, 2 = true) in the future
@@ -58,11 +74,11 @@ public class Stats : MonoBehaviour {
 
 		/*
 		//*******************************DOUBLE CHECK THESE CALCULATIONS WHEN IMPLEMENTING*******************************
-		//physical damage reduced by armor
+		//physical damage reduced by armor (index == 0 indicates physical damage)
 		if(index == 0)  	{
 			final_amount = amount * (1 - (100 / (armor + 100)));
 		}
-		//magic damage reduced by MR
+		//magic damage reduced by MR (index == 1 indicates magic damage)
 		if(index == 1)	{
 			final_amount = amount * (1 - (100 / (MR + 100)));
 		}
@@ -98,6 +114,10 @@ public class Stats : MonoBehaviour {
 			Debug.Log (this.name + " DIED");
 			Destroy(transform.Find("Player_Canvas"));
 			Destroy (this.gameObject);
+		}
+
+		if(this.gameObject.tag.Contains("Player"))	{
+			UpdateHPText ();
 		}
 
 	}
