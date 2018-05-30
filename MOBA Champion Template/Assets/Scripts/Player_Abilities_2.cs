@@ -134,14 +134,13 @@ public class Player_Abilities_2 : MonoBehaviour {
 			if(W_selection == true)	{
 				RaycastHit hit;
 				Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-				if (Physics.Raycast(ray, out hit))
-				{
-					if ((red == false && hit.collider.gameObject.tag == "Blue_Champ") || (red == true && hit.collider.gameObject.tag == "Red_Champ"))
-					{
+				if (Physics.Raycast (ray, out hit)) {
+					//Debug.Log (hit.collider.gameObject.name);
+					if ((red == false && hit.collider.gameObject.tag.Contains ("Blue_Champ")) || (red == true && hit.collider.gameObject.tag.Contains ("Red_Champ"))) {
 						//Debug.Log ("PUTTING SHIELD ON " + hit.collider.gameObject.name);
 						//********************APPLY THE SHIELD BUFF HERE***************************************
 						//create the shield object
-						GameObject s = Instantiate(W_object, hit.collider.gameObject.transform);
+						GameObject s = Instantiate (W_object, hit.collider.gameObject.transform);
 						s.transform.localPosition = Vector3.zero;
 						//hit.collider.gameObject
 						W_on_CD = true;
@@ -150,8 +149,10 @@ public class Player_Abilities_2 : MonoBehaviour {
 						stat_script.UpdateManaBar ();
 					}
 					W_selection = false;
-					Cursor.SetCursor(null, Vector2.zero, curMode);
-				}
+					Cursor.SetCursor (null, Vector2.zero, curMode);
+				} 
+				else
+					Debug.Log ("uw0t");
 			}
 		}
 		if (W_on_CD == true) {
@@ -179,7 +180,7 @@ public class Player_Abilities_2 : MonoBehaviour {
 				Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 				if (Physics.Raycast(ray, out hit))
 				{
-					if ((red == false && (hit.collider.gameObject.tag == "Red_Champ" || hit.collider.gameObject.tag == "Red_Minion")) || (red == true && (hit.collider.gameObject.tag == "Blue_Champ" || hit.collider.gameObject.tag == "Blue_Minion")))
+					if ((red == false && (hit.collider.gameObject.tag.Contains("Red_Champ") || hit.collider.gameObject.tag == "Red_Minion")) || (red == true && (hit.collider.gameObject.tag.Contains("Blue_Champ") || hit.collider.gameObject.tag == "Blue_Minion")))
 					{
 						//in this case, Malefic Visions' ID # is 0
 						hit.collider.gameObject.GetComponent<Debuff_Manager>().ApplyDebuffToSelf(0, this.gameObject);

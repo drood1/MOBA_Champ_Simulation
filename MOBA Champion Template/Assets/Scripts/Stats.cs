@@ -111,7 +111,6 @@ public class Stats : MonoBehaviour {
 			if (this.gameObject.name.Contains ("Champ") && !(this.gameObject.name.Contains ("AI")))
 				SceneManager.LoadScene ("main");
 
-			Debug.Log (this.name + " DIED");
 			Destroy(transform.Find("Player_Canvas"));
 			Destroy (this.gameObject);
 		}

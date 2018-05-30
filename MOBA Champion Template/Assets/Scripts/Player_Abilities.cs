@@ -163,7 +163,7 @@ public class Player_Abilities : MonoBehaviour {
 				Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 				if (Physics.Raycast(ray, out hit))
 				{
-					if ((red == false && hit.collider.gameObject.tag == "Blue_Champ") || (red == true && hit.collider.gameObject.tag == "Red_Champ"))
+					if ((red == false && hit.collider.gameObject.tag.Contains("Blue_Champ")) || (red == true && hit.collider.gameObject.tag.Contains("Red_Champ")))
 					{
 						//Debug.Log ("PUTTING SHIELD ON " + hit.collider.gameObject.name);
 						//********************APPLY THE SHIELD BUFF HERE***************************************
@@ -214,7 +214,7 @@ public class Player_Abilities : MonoBehaviour {
 				Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 				if (Physics.Raycast(ray, out hit))
 				{
-					if ((red == false && (hit.collider.gameObject.tag == "Red_Champ" || hit.collider.gameObject.tag == "Red_Minion")) || (red == true && (hit.collider.gameObject.tag == "Blue_Champ" || hit.collider.gameObject.tag == "Blue_Minion")))
+					if ((red == false && (hit.collider.gameObject.tag.Contains("Red_Champ") || hit.collider.gameObject.tag == "Red_Minion")) || (red == true && (hit.collider.gameObject.tag.Contains("Blue_Champ") || hit.collider.gameObject.tag == "Blue_Minion")))
 					{
 						//in this case, Malefic Visions' ID # is 0
 						hit.collider.gameObject.GetComponent<Debuff_Manager>().ApplyDebuffToSelf(0, this.gameObject);
